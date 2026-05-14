@@ -395,7 +395,9 @@ function HideROIs_Callback(hObject, eventdata, handles)
 handles.roiLines.Visible = ~hObject.Value;
 
 function UpdateImage(handles)
-handles.filteredImage = handles.Settings.patterns.getPattern(1);
+% handles.filteredImage = handles.Settings.patterns.getPattern(1);
+% handles.filteredImageObject.CData = handles.filteredImage;
+handles.filteredImage = handles.Settings.patterns.getPattern(handles.Settings, 1); 
 handles.filteredImageObject.CData = handles.filteredImage;
 
 function handles = UpdateROIs(handles)
